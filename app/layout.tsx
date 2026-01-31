@@ -30,6 +30,11 @@ export const metadata: Metadata = {
     ],
     apple: '/apple-icon.png',
   },
+  verification: {
+    other: {
+      "p:domain_verify": "c94c22fc82b892a7773c6cea0d4e0ec4",
+    },
+  },
 }
 
 export default function RootLayout({
