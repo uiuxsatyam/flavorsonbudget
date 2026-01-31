@@ -47,7 +47,7 @@ export default function RootLayout({
       <body className={`${dmSans.variable} ${playfair.variable} font-sans antialiased`}>
         {children}
         <Analytics />
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || ""} />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || "G-D602ZYW7N3"} />
 
       </body>
     </html>
