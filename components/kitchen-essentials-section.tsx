@@ -13,7 +13,8 @@ const products = [
     rating: 4.8,
     badge: "Best Seller",
     image: "/images/pan.jpg",
-    reviewCount: 124,
+    reviewCount: 324,
+    link: "https://amzn.to/3LU0OaU",
   },
   {
     name: "Carbon Steel Wok",
@@ -21,7 +22,8 @@ const products = [
     rating: 4.7,
     badge: "Chef's Pick",
     image: "/images/wok.jpg",
-    reviewCount: 89,
+    reviewCount: 189,
+    link: "https://amzn.to/4qgzFNb",
   },
   {
     name: "Kitchen Knife Set",
@@ -29,7 +31,8 @@ const products = [
     rating: 4.9,
     badge: "Top Rated",
     image: "/images/knives.jpg",
-    reviewCount: 205,
+    reviewCount: 405,
+    link: "https://amzn.to/3ZjaMFM",
   },
   {
     name: "Vegetable Chopper",
@@ -37,15 +40,17 @@ const products = [
     rating: 4.6,
     badge: "Time Saver",
     image: "/images/chopper.jpg",
-    reviewCount: 76,
+    reviewCount: 176,
+    link: "https://amzn.to/3MbeONy",
   },
   {
-    name: "Cooking Essentials Kit",
+    name: "Cooking Essential Kit",
     benefit: "Everything you need to get started - spatulas, ladles, and more in one set.",
     rating: 4.8,
     badge: "Starter Kit",
     image: "/images/essentials.jpg",
-    reviewCount: 142,
+    reviewCount: 242,
+    link: "https://amzn.to/4cgNx6J",
   },
   {
     name: "Pressure Cooker",
@@ -53,7 +58,8 @@ const products = [
     rating: 4.9,
     badge: "Fast Cooking",
     image: "/images/pressure-cooker.jpg",
-    reviewCount: 310,
+    reviewCount: 510,
+    link: "https://amzn.to/3LZLkSJ",
   },
   {
     name: "Mixing Bowl Set",
@@ -61,7 +67,8 @@ const products = [
     rating: 4.7,
     badge: "Must Have",
     image: "/images/mixing-bowls.jpg",
-    reviewCount: 95,
+    reviewCount: 195,
+    link: "https://amzn.to/3ZSTyPF",
   },
   {
     name: "Wooden Cutting Board",
@@ -69,7 +76,8 @@ const products = [
     rating: 4.8,
     badge: "Essential",
     image: "/images/cutting-board.jpg",
-    reviewCount: 118,
+    reviewCount: 218,
+    link: "https://amzn.to/3ZUhcLB",
   },
 ];
 
@@ -121,9 +129,11 @@ export function KitchenEssentialsSection() {
                     {product.benefit}
                   </p>
                 </div>
-                <Button size="sm" className="w-full gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-md hover:shadow-lg transition-all">
-                  Check Price
-                  <ExternalLink className="h-4 w-4" />
+                <Button size="sm" className="w-full gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-md hover:shadow-lg transition-all" asChild>
+                  <a href={product.link} target="_blank" rel="noopener noreferrer">
+                    Check Price
+                    <ExternalLink className="h-4 w-4" />
+                  </a>
                 </Button>
               </CardContent>
             </Card>

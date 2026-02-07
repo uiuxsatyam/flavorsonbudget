@@ -11,24 +11,28 @@ const groceries = [
     description: "Authentic Indian spices to elevate every dish",
     image: "/images/spices.jpg",
     items: ["Garam Masala", "Turmeric", "Red Chili Powder"],
+    link: "https://amzn.to/4cgNPdP",
   },
   {
     category: "Sauces & Condiments",
     description: "Flavor boosters for quick and tasty meals",
     image: "/images/sauces.jpg",
     items: ["Soy Sauce", "Tomato Ketchup", "Green Chutney"],
+    link: "https://amzn.to/4ae7qc1",
   },
   {
     category: "Pasta, Noodles & Rice",
     description: "Essential carbs for filling budget meals",
     image: "/images/pasta.jpg",
     items: ["Basmati Rice", "Instant Noodles", "Penne Pasta"],
+    link: "https://amzn.to/4cfcgIG",
   },
   {
     category: "Budget Pantry Staples",
     description: "Stock your kitchen with everyday essentials",
     image: "/images/pantry.jpg",
     items: ["Lentils", "Chickpeas", "Cooking Oil"],
+    link: "https://amzn.to/4qiMG93",
   },
 ];
 
@@ -47,8 +51,8 @@ export function GrocerySection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {groceries.map((item, index) => (
-            <Card 
-              key={index} 
+            <Card
+              key={index}
               className="group overflow-hidden border border-border/50 hover:border-primary/50 shadow-md hover:shadow-xl transition-all duration-300 bg-card flex flex-col h-full"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-muted">
@@ -70,7 +74,7 @@ export function GrocerySection() {
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {item.items.map((subItem, idx) => (
-                      <span 
+                      <span
                         key={idx}
                         className="text-xs px-2.5 py-1 bg-accent/15 text-accent font-medium rounded-full group-hover:bg-accent/25 transition-colors duration-300"
                       >
@@ -79,9 +83,11 @@ export function GrocerySection() {
                     ))}
                   </div>
                 </div>
-                <Button size="sm" className="w-full gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-md hover:shadow-lg transition-all">
-                  <ShoppingCart className="h-4 w-4" />
-                  Buy Now
+                <Button size="sm" className="w-full gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-md hover:shadow-lg transition-all" asChild>
+                  <a href={item.link} target="_blank" rel="noopener noreferrer">
+                    <ShoppingCart className="h-4 w-4" />
+                    Buy Now
+                  </a>
                 </Button>
               </CardContent>
             </Card>
