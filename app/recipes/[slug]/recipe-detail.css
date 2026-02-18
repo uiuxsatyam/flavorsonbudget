@@ -673,6 +673,14 @@
 }
 
 /* TABLES */
+.fob-recipe .table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 12px;
+  border-radius: 10px;
+}
+
 .fob-recipe .data-table {
   width: 100%;
   border-collapse: collapse;
@@ -1369,12 +1377,34 @@
     max-width: 820px;
   }
 
+  /* Show sidebar below content instead of hiding */
   .fob-recipe .sidebar {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  .fob-recipe .sidebar-widget {
+    margin-bottom: 0;
+  }
+
+  /* Arrange sidebar widgets in a grid for tablets if needed, or keep stacked */
+  .fob-recipe .sidebar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
   }
 
   .fob-recipe .banner-ad-wrap {
     display: none;
+  }
+}
+
+@media(max-width: 768px) {
+  .fob-recipe .sidebar {
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -1428,11 +1458,32 @@
   }
 
   .fob-recipe .engagement-bar {
-    padding: 8px 12px;
+    padding: 8px 16px;
+    width: 90%;
+    justify-content: space-between;
   }
 
   .fob-recipe .eng-btn {
-    padding: 6px 8px;
-    font-size: .75rem;
+    padding: 10px 12px;
+    /* Larger touch target */
+    font-size: .85rem;
+  }
+
+  /* Increase touch targets for other interactive elements */
+  .fob-recipe .back-link,
+  .fob-recipe .share-btn,
+  .fob-recipe .sidebar-tag,
+  .fob-recipe .quick-links li a {
+    padding: 12px 16px;
+  }
+
+  .fob-recipe .step-num {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .fob-recipe .step-num::after {
+    top: 36px;
   }
 }

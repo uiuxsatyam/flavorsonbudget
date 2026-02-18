@@ -241,16 +241,18 @@ export default function RecipeDetailPage() {
                     {/* Cost Table */}
                     <div id="cost" className="glass-section">
                         <h2><span className="section-num">{recipe.costTable.headingIcon}</span> {recipe.costTable.heading}</h2>
-                        <table className="data-table">
-                            <thead><tr><th>Ingredient</th><th>Quantity</th><th>Cost</th></tr></thead>
-                            <tbody>{recipe.costTable.ingredients.map((r, i) => <tr key={i}><td>{r.name}</td><td>{r.qty}</td><td>{r.cost}</td></tr>)}</tbody>
-                            <tfoot>
-                                <tr className="row-total"><td><strong>TOTAL — {recipe.costTable.totalServings}</strong></td><td></td><td><strong>{recipe.costTable.totalCost}</strong></td></tr>
-                                <tr className="row-saving"><td>Per serving <span className="tag tag-green">at home</span></td><td></td><td><strong>{recipe.costTable.perServing}</strong></td></tr>
-                                <tr><td>Same dish <span className="tag tag-red">at restaurant</span></td><td></td><td style={{ color: "var(--rust)", fontWeight: 700 }}>{recipe.costTable.restaurantCost}</td></tr>
-                                <tr className="row-saving"><td><strong><PartyPopper size={14} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 4 }} /> YOU SAVE per serving</strong></td><td></td><td><strong>{recipe.costTable.saving}</strong></td></tr>
-                            </tfoot>
-                        </table>
+                        <div className="table-wrapper">
+                            <table className="data-table">
+                                <thead><tr><th>Ingredient</th><th>Quantity</th><th>Cost</th></tr></thead>
+                                <tbody>{recipe.costTable.ingredients.map((r, i) => <tr key={i}><td>{r.name}</td><td>{r.qty}</td><td>{r.cost}</td></tr>)}</tbody>
+                                <tfoot>
+                                    <tr className="row-total"><td><strong>TOTAL — {recipe.costTable.totalServings}</strong></td><td></td><td><strong>{recipe.costTable.totalCost}</strong></td></tr>
+                                    <tr className="row-saving"><td>Per serving <span className="tag tag-green">at home</span></td><td></td><td><strong>{recipe.costTable.perServing}</strong></td></tr>
+                                    <tr><td>Same dish <span className="tag tag-red">at restaurant</span></td><td></td><td style={{ color: "var(--rust)", fontWeight: 700 }}>{recipe.costTable.restaurantCost}</td></tr>
+                                    <tr className="row-saving"><td><strong><PartyPopper size={14} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 4 }} /> YOU SAVE per serving</strong></td><td></td><td><strong>{recipe.costTable.saving}</strong></td></tr>
+                                </tfoot>
+                            </table>
+                        </div>
                         <TipBox tip={recipe.costTable.tip} />
                     </div>
 
@@ -335,14 +337,16 @@ export default function RecipeDetailPage() {
                     {/* Savings Table */}
                     <div id="savings" className="glass-section">
                         <h2><span className="section-num"><PiggyBank size={20} /></span> How Much You Save Monthly</h2>
-                        <table className="savings-table">
-                            <thead><tr><th>Scenario</th><th>Restaurant</th><th>Home</th></tr></thead>
-                            <tbody>
-                                {recipe.savingsTable.rows.map((r, i) => (
-                                    <tr key={i}><td>{r.scenario}</td><td className="rest-price">{r.restCost}</td><td className="home-price">{r.homeCost}</td></tr>
-                                ))}
-                            </tbody>
-                        </table>
+                        <div className="table-wrapper">
+                            <table className="savings-table">
+                                <thead><tr><th>Scenario</th><th>Restaurant</th><th>Home</th></tr></thead>
+                                <tbody>
+                                    {recipe.savingsTable.rows.map((r, i) => (
+                                        <tr key={i}><td>{r.scenario}</td><td className="rest-price">{r.restCost}</td><td className="home-price">{r.homeCost}</td></tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
                         <div className="tip-box green" style={{ marginTop: "16px" }}><span><Target size={16} /></span><span>{recipe.savingsTable.tip}</span></div>
                     </div>
 
