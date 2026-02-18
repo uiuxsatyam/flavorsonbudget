@@ -87,6 +87,9 @@
   padding: 5px 12px;
   border-radius: 100px;
   border: 1px solid rgba(92, 107, 46, .2);
+  white-space: nowrap;
+  /* Prevent wrapping */
+  flex-shrink: 0;
 }
 
 .fob-recipe .back-link {
@@ -102,6 +105,9 @@
   border: 1px solid rgba(92, 107, 46, .2);
   background: rgba(92, 107, 46, .06);
   transition: background .2s, transform .15s;
+  white-space: nowrap;
+  /* Prevent wrapping */
+  flex-shrink: 0;
 }
 
 .fob-recipe .back-link:hover {
@@ -1431,6 +1437,11 @@
 
   .fob-recipe .glass-section {
     padding: 22px 18px;
+  }
+
+  /* Reduce hero image height for mobile */
+  .fob-recipe .hero-image {
+    height: 300px;
   }
 
   .fob-recipe .fob-nav {
