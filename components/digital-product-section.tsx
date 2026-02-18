@@ -11,7 +11,7 @@ const ebooks = [
     title: "15 Budget Meals Under ₹100",
     subtitle: "PDF Guide",
     description: "Easy, affordable recipes for everyday cooking",
-    image: "/images/ebook-cover.jpg",
+    image: "/images/ebook-cover.webp",
     badge: "Best Seller",
     featured: true,
   },
@@ -20,7 +20,7 @@ const ebooks = [
     title: "Street Food at Home",
     subtitle: "30 Easy Recipes",
     description: "Make your favorite street snacks at home",
-    image: "/images/ebook-cover-2.jpg",
+    image: "/images/ebook-cover-2.webp",
     badge: "Popular",
     featured: false,
   },
@@ -29,7 +29,7 @@ const ebooks = [
     title: "Quick 15-Minute Meals",
     subtitle: "For Busy Days",
     description: "Fast, healthy meals when time is short",
-    image: "/images/ebook-cover-3.jpg",
+    image: "/images/ebook-cover-3.webp",
     badge: "New",
     featured: false,
   },
@@ -57,11 +57,10 @@ export function DigitalProductSection() {
           {ebooks.map((ebook) => (
             <article
               key={ebook.id}
-              className={`group relative bg-background rounded-2xl p-5 border shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full ${
-                ebook.featured 
-                  ? "border-primary/50 ring-2 ring-primary/30 bg-gradient-to-br from-primary/5 to-transparent" 
+              className={`group relative bg-background rounded-2xl p-5 border shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full ${ebook.featured
+                  ? "border-primary/50 ring-2 ring-primary/30 bg-gradient-to-br from-primary/5 to-transparent"
                   : "border-border/50 hover:border-primary/50"
-              }`}
+                }`}
             >
               {/* Ebook Cover */}
               <div className="relative mb-4 overflow-hidden rounded-xl bg-muted group-hover:shadow-lg transition-shadow duration-300">
@@ -74,15 +73,14 @@ export function DigitalProductSection() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
-                
+
                 {/* Badge */}
-                <div className={`absolute top-2 right-2 px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1 ${
-                  ebook.featured 
-                    ? "bg-primary text-primary-foreground" 
-                    : ebook.badge === "New" 
-                    ? "bg-accent text-accent-foreground"
-                    : "bg-secondary text-secondary-foreground"
-                }`}>
+                <div className={`absolute top-2 right-2 px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1 ${ebook.featured
+                    ? "bg-primary text-primary-foreground"
+                    : ebook.badge === "New"
+                      ? "bg-accent text-accent-foreground"
+                      : "bg-secondary text-secondary-foreground"
+                  }`}>
                   {ebook.featured && <Sparkles className="h-3 w-3" aria-hidden="true" />}
                   {ebook.badge === "Popular" && <Star className="h-3 w-3" aria-hidden="true" />}
                   {ebook.badge}
@@ -103,12 +101,11 @@ export function DigitalProductSection() {
 
                 {/* CTA */}
                 <div className="mt-4 pt-4 border-t border-border/30">
-                  <Button 
-                    className={`w-full gap-2 font-semibold shadow-md hover:shadow-lg transition-all ${
-                      ebook.featured 
-                        ? "bg-primary hover:bg-primary/90 text-primary-foreground" 
+                  <Button
+                    className={`w-full gap-2 font-semibold shadow-md hover:shadow-lg transition-all ${ebook.featured
+                        ? "bg-primary hover:bg-primary/90 text-primary-foreground"
                         : "border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
-                    }`}
+                      }`}
                   >
                     <Download className="h-4 w-4" aria-hidden="true" />
                     Get the Guide

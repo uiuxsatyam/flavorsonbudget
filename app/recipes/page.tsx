@@ -30,7 +30,7 @@ export default function RecipesPage() {
             <Navbar />
 
             {/* Header Section */}
-            <section className="pt-32 pb-12 px-4 md:px-6 bg-gradient-to-b from-secondary/30 to-background">
+            <section className="pt-24 md:pt-32 pb-12 px-4 md:px-6 bg-gradient-to-b from-secondary/30 to-background">
                 <div className="container mx-auto max-w-6xl text-center">
                     <Badge variant="outline" className="mb-4 text-primary border-primary/30">
                         Budget-Friendly Recipes

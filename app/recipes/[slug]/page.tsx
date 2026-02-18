@@ -109,7 +109,6 @@ export default function RecipeDetailPage() {
             <nav className="fob-nav">
                 <Link href="/recipes" className="back-link"><ArrowLeft size={16} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 4 }} /> All Recipes</Link>
                 <Link href="/" className="nav-brand">FlavorsOnBudget</Link>
-                <span className="nav-tag">{recipe.category}</span>
             </nav>
 
             {/* Hero */}

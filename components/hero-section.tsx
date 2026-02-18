@@ -14,7 +14,7 @@ export function HeroSection() {
       {/* Background Image with proper accessibility */}
       <div className="absolute inset-0 z-0" aria-hidden="true">
         <Image
-          src="/images/hero-food.jpg"
+          src="/images/hero-food.webp"
           alt=""
           fill
           className="object-cover"

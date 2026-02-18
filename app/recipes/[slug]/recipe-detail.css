@@ -1436,16 +1436,47 @@
   }
 
   .fob-recipe .glass-section {
-    padding: 22px 18px;
+    padding: 10px 18px 22px 18px;
+    /* Reduced top padding from 22px */
   }
 
   /* Reduce hero image height for mobile */
-  .fob-recipe .hero-image {
-    height: 300px;
+  .fob-recipe .fob-nav {
+    padding: 10px 12px;
+    gap: 8px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(253, 246, 227, 0.95);
+    /* Matches bg-color with transparency */
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(92, 107, 46, 0.1);
   }
 
-  .fob-recipe .fob-nav {
-    padding: 12px 16px;
+  /* Smaller chips on mobile */
+  .fob-recipe .back-link,
+  .fob-recipe .nav-tag {
+    font-size: .75rem;
+    padding: 5px 10px;
+  }
+
+  .fob-recipe .back-link {
+    gap: 4px;
+  }
+
+  /* Full width hero image on mobile (undoing padding from glass-section) */
+  .fob-recipe .hero-image {
+    height: 280px;
+    /* Slightly shorter */
+    width: calc(100% + 36px);
+    /* 100% + 2 * 18px padding */
+    margin-left: -18px;
+    margin-right: -18px;
+    margin-top: -22px;
+    /* Pull up to top edge */
+    border-radius: 20px 20px 0 0;
+    /* Keep top radius if glass section has it, or 0 if desired */
+    margin-bottom: 20px;
   }
 
   .fob-recipe .savings-badge {
