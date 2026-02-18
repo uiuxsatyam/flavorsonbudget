@@ -70,7 +70,7 @@ export function HeroSection() {
                   track('explore_recipes_click');
                 }}
               >
-                <a href="#recipes">
+                <a href="/recipes">
                   <ChefHat className="h-5 w-5" aria-hidden="true" />
                   Explore Budget Recipes
                 </a>

@@ -1,117 +1,26 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import Link from "next/link";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Search, Clock, ChefHat, Flame, ArrowRight } from "lucide-react";
+import { Search, Clock, ChefHat, ArrowRight, IndianRupee } from "lucide-react";
+import { getAllRecipes, getRecipeCategories } from "@/lib/recipes-data";
 
-// Mock Data
-const recipes = [
-    {
-        id: 1,
-        title: "Quick Chickpea Curry",
-        category: "Dinner",
-        time: "20 mins",
-        difficulty: "Easy",
-        calories: "320 kcal",
-        image: "/images/chickpea-curry.jpg",
-        tags: ["Vegan", "Gluten-Free"],
-    },
-    {
-        id: 2,
-        title: "Vegetable Stir-Fry",
-        category: "Dinner",
-        time: "15 mins",
-        difficulty: "Easy",
-        calories: "280 kcal",
-        image: "/images/stir-fry.jpg",
-        tags: ["Vegan", "Quick"],
-    },
-    {
-        id: 3,
-        title: "Oatmeal with Fruits",
-        category: "Breakfast",
-        time: "10 mins",
-        difficulty: "Easy",
-        calories: "250 kcal",
-        image: "/images/oatmeal.jpg",
-        tags: ["Healthy", "Breakfast"],
-    },
-    {
-        id: 4,
-        title: "Grilled Chicken Salad",
-        category: "Lunch",
-        time: "25 mins",
-        difficulty: "Medium",
-        calories: "400 kcal",
-        image: "/images/chicken-salad.jpg",
-        tags: ["High Protein", "Low Carb"],
-    },
-    {
-        id: 5,
-        title: "Banana Smoothies",
-        category: "Breakfast",
-        time: "5 mins",
-        difficulty: "Easy",
-        calories: "180 kcal",
-        image: "/images/smoothie.jpg",
-        tags: ["Quick", "Drink"],
-    },
-    {
-        id: 6,
-        title: "Pasta Primavera",
-        category: "Dinner",
-        time: "30 mins",
-        difficulty: "Medium",
-        calories: "450 kcal",
-        image: "/images/pasta-primavera.jpg",
-        tags: ["Vegetarian", "Family Favorite"],
-    },
-    {
-        id: 7,
-        title: "Avocado Toast",
-        category: "Snack",
-        time: "5 mins",
-        difficulty: "Easy",
-        calories: "220 kcal",
-        image: "/images/avocado-toast.jpg",
-        tags: ["Healthy", "Quick"],
-    },
-    {
-        id: 8,
-        title: "Lentil Soup",
-        category: "Lunch",
-        time: "40 mins",
-        difficulty: "Medium",
-        calories: "300 kcal",
-        image: "/images/lentil-soup.jpg",
-        tags: ["Vegan", "High Fiber"],
-    },
-    {
-        id: 9,
-        title: "Chocolate Mug Cake",
-        category: "Dessert",
-        time: "5 mins",
-        difficulty: "Easy",
-        calories: "280 kcal",
-        image: "/images/mug-cake.jpg",
-        tags: ["Dessert", "Sweet"],
-    },
-];
-
-const categories = ["All", "Breakfast", "Lunch", "Dinner", "Snack", "Dessert"];
+const recipes = getAllRecipes();
+const categories = getRecipeCategories();
 
 export default function RecipesPage() {
     const [searchQuery, setSearchQuery] = useState("");
     const [selectedCategory, setSelectedCategory] = useState("All");
 
     const filteredRecipes = recipes.filter((recipe) => {
-        const matchesSearch = recipe.title.toLowerCase().includes(searchQuery.toLowerCase());
+        const matchesSearch = recipe.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            recipe.subcategory.toLowerCase().includes(searchQuery.toLowerCase());
         const matchesCategory = selectedCategory === "All" || recipe.category === selectedCategory;
         return matchesSearch && matchesCategory;
     });
@@ -124,14 +33,14 @@ export default function RecipesPage() {
             <section className="pt-32 pb-12 px-4 md:px-6 bg-gradient-to-b from-secondary/30 to-background">
                 <div className="container mx-auto max-w-6xl text-center">
                     <Badge variant="outline" className="mb-4 text-primary border-primary/30">
-                        Culinary Inspiration
+                        Budget-Friendly Recipes
                     </Badge>
                     <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6">
                         Delicious Recipes
                     </h1>
                     <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-10">
-                        Discover budget-friendly meals that taste like a million bucks.
-                        From quick breakfasts to hearty dinners, we have got you covered.
+                        Restaurant-quality meals at a fraction of the cost. Every recipe shows
+                        exactly how much you save compared to eating out.
                     </p>
 
                     {/* Search and Filter */}
@@ -168,52 +77,54 @@ export default function RecipesPage() {
                     {filteredRecipes.length > 0 ? (
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                             {filteredRecipes.map((recipe) => (
-                                <Card key={recipe.id} className="group overflow-hidden border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg flex flex-col">
-                                    <div className="relative aspect-video overflow-hidden bg-muted">
-                                        <Image
-                                            src={recipe.image}
-                                            alt={recipe.title}
-                                            fill
-                                            className="object-cover group-hover:scale-105 transition-transform duration-500"
-                                        />
-                                        <Badge className="absolute top-3 right-3 bg-background/80 backdrop-blur-sm text-foreground hover:bg-background/90">
-                                            {recipe.category}
-                                        </Badge>
-                                    </div>
-                                    <CardContent className="p-5 flex-1">
-                                        <div className="flex flex-wrap gap-2 mb-3">
-                                            {recipe.tags.map(tag => (
-                                                <span key={tag} className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-secondary text-secondary-foreground">
-                                                    {tag}
+                                <Link key={recipe.slug} href={`/recipes/${recipe.slug}`} className="group">
+                                    <Card className="overflow-hidden border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg flex flex-col h-full !py-0">
+                                        {/* Card Thumbnail */}
+                                        <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 flex items-center justify-center">
+                                            {recipe.image ? (
+                                                <img src={recipe.image} alt={recipe.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                            ) : (
+                                                <span className="text-7xl opacity-40 group-hover:scale-110 transition-transform duration-500">{recipe.emoji}</span>
+                                            )}
+                                            <Badge className="absolute top-3 left-3 bg-background/80 backdrop-blur-sm text-foreground hover:bg-background/90">
+                                                {recipe.category}
+                                            </Badge>
+                                        </div>
+                                        <CardContent className="p-5 flex-1">
+                                            <div className="flex flex-wrap gap-2 mb-3">
+                                                <span className="text-xs font-semibold px-3 py-1 rounded-full bg-green-100 text-green-800">
+                                                    {recipe.subcategory}
                                                 </span>
-                                            ))}
-                                        </div>
-                                        <h3 className="font-serif font-bold text-xl mb-2 group-hover:text-primary transition-colors">
-                                            {recipe.title}
-                                        </h3>
+                                                <span className="text-xs font-semibold px-3 py-1 rounded-full bg-secondary text-secondary-foreground">
+                                                    {recipe.stats.find(s => s.label === "Total Time")?.value}
+                                                </span>
+                                            </div>
+                                            <h3 className="font-serif font-bold text-xl mb-2 group-hover:text-primary transition-colors">
+                                                {recipe.title}
+                                            </h3>
+                                            <p className="text-sm text-muted-foreground line-clamp-2 mb-4">
+                                                {recipe.intro.lead}
+                                            </p>
 
-                                        <div className="flex items-center gap-4 text-sm text-muted-foreground mt-4">
-                                            <div className="flex items-center gap-1.5">
-                                                <Clock className="h-4 w-4" />
-                                                <span>{recipe.time}</span>
+                                            <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                                                <div className="flex items-center gap-1.5">
+                                                    <Clock className="h-3.5 w-3.5" />
+                                                    <span>{recipe.stats.find(s => s.label === "Total Time")?.value}</span>
+                                                </div>
+                                                <div className="flex items-center gap-1.5">
+                                                    <ChefHat className="h-3.5 w-3.5" />
+                                                    <span>{recipe.stats.find(s => s.label === "Servings")?.value} servings</span>
+                                                </div>
                                             </div>
-                                            <div className="flex items-center gap-1.5">
-                                                <Flame className="h-4 w-4" />
-                                                <span>{recipe.calories}</span>
-                                            </div>
-                                            <div className="flex items-center gap-1.5">
-                                                <ChefHat className="h-4 w-4" />
-                                                <span>{recipe.difficulty}</span>
-                                            </div>
-                                        </div>
-                                    </CardContent>
-                                    <CardFooter className="p-5 pt-0">
-                                        <Button className="w-full gap-2 group-hover:bg-primary group-hover:text-primary-foreground transition-colors" variant="secondary">
-                                            View Recipe
-                                            <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                                        </Button>
-                                    </CardFooter>
-                                </Card>
+                                        </CardContent>
+                                        <CardFooter className="p-5 pt-0">
+                                            <Button className="w-full gap-2 group-hover:bg-primary group-hover:text-primary-foreground transition-colors" variant="secondary">
+                                                View Recipe
+                                                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                                            </Button>
+                                        </CardFooter>
+                                    </Card>
+                                </Link>
                             ))}
                         </div>
                     ) : (
