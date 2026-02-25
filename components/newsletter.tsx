@@ -7,8 +7,8 @@ import { Mail } from "lucide-react";
 export function Newsletter() {
     return (
         <section className="py-16 md:py-24 bg-background border-t border-border/50">
-            <div className="container mx-auto max-w-4xl px-4 md:px-6">
-                <div className="text-center mb-10">
+            <div className="container mx-auto max-w-4xl px-0 md:px-6">
+                <div className="text-center mb-10 px-4 md:px-0">
                     <Badge variant="outline" className="mb-4 text-primary border-primary/30">
                         Stay Updated
                     </Badge>
@@ -21,7 +21,7 @@ export function Newsletter() {
                 </div>
 
                 <div className="flex justify-center">
-                    <div className="w-full max-w-[562px] bg-card/30 backdrop-blur-sm rounded-[31px] border border-border/50 shadow-xl overflow-hidden group hover:border-primary/30 transition-all duration-500">
+                    <div className="w-full max-w-[562px] bg-card/30 backdrop-blur-sm md:rounded-[31px] border-y md:border border-border/50 shadow-xl overflow-hidden group hover:border-primary/30 transition-all duration-500">
                         <Script
                             src="https://subscribe-forms.beehiiv.com/embed.js"
                             strategy="afterInteractive"
@@ -36,8 +36,8 @@ export function Newsletter() {
                             style={{
                                 height: '320px',
                                 width: '100%',
-                                minWidth: '100%',
-                                borderRadius: '23px',
+                                maxWidth: '100%',
+                                borderRadius: '0px', // Handled by container on desktop
                                 backgroundColor: 'transparent',
                             }}
                         />
