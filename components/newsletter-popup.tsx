@@ -19,7 +19,7 @@ export function NewsletterPopup() {
 
         const timer = setTimeout(() => {
             setIsVisible(true);
-        }, 15000);
+        }, 10000);
 
         return () => clearTimeout(timer);
     }, []);
@@ -48,10 +48,10 @@ export function NewsletterPopup() {
                 </button>
 
                 {/* Content Container */}
-                <div className="pt-16 pb-6 px-0 flex flex-col items-center">
-                    <div className="text-center mb-6 px-6">
-                        <h2 className="text-3xl font-serif font-bold mb-2 tracking-tight text-foreground">Wait! Let's Stay Connected</h2>
-                        <p className="text-muted-foreground text-sm max-w-[280px] mx-auto leading-relaxed">
+                <div className="pt-10 pb-6 px-0 flex flex-col items-center">
+                    <div className="text-center mb-4 px-6 md:px-10">
+                        <h2 className="text-2xl md:text-3xl font-serif font-bold mb-2 tracking-tight text-foreground">Wait! Let's Stay Connected</h2>
+                        <p className="text-muted-foreground text-sm max-w-[340px] mx-auto leading-relaxed">
                             Join 5,000+ smart cooks getting our <span className="text-primary font-bold italic">best weekly recipes</span> for free.
                         </p>
                     </div>
@@ -64,22 +64,21 @@ export function NewsletterPopup() {
                         />
                         <iframe
                             src="https://subscribe-forms.beehiiv.com/b74cb716-6f20-4495-8769-c23aae94e90e"
-                            className="beehiiv-embed w-full min-w-full appearance-none m-0 p-0 transform-gpu"
+                            className="beehiiv-embed w-full min-w-full appearance-none m-0 p-0"
                             data-test-id="beehiiv-embed"
                             frameBorder="0"
                             scrolling="no"
                             style={{
-                                height: '320px',
+                                height: '280px',
                                 width: '100%',
                                 maxWidth: '100%',
                                 backgroundColor: 'transparent',
                                 margin: 0,
-                                transform: 'translateZ(0)', // Performance booster
                             }}
                         />
                     </div>
 
-                    <p className="mt-4 text-[10px] text-muted-foreground uppercase tracking-widest font-bold opacity-50">
+                    <p className="mt-2 text-[10px] text-muted-foreground uppercase tracking-widest font-bold opacity-50">
                         Zero Spam • Cancel Anytime • Exclusive Content
                     </p>
                 </div>
