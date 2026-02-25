@@ -4,6 +4,7 @@ import { DM_Sans, Playfair_Display } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import Script from 'next/script'
+import { NewsletterPopup } from '@/components/newsletter-popup'
 import './globals.css'
 
 const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-dm-sans" });
@@ -40,6 +41,7 @@ export default function RootLayout({
       <body className={`${dmSans.variable} ${playfair.variable} font-sans antialiased`}>
         {children}
         <Analytics />
+        <NewsletterPopup />
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || "G-D602ZYW7N3"} />
         <Script id="microsoft-clarity" strategy="afterInteractive">
           {`
