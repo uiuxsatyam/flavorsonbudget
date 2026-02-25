@@ -6,10 +6,11 @@ import { Heart } from "lucide-react";
 
 const links = [
   { label: "Home", href: "/" },
-  { label: "Recipes", href: "#value" },
-  { label: "Shop", href: "#essentials" },
-  { label: "Digital Products", href: "#digital" },
-  { label: "Affiliate Disclosure", href: "#disclosure" },
+  { label: "Recipes", href: "/recipes" },
+  { label: "Pocket Guides", href: "/guides" },
+  { label: "Kitchen Essentials", href: "/essentials" },
+  { label: "Grocery Picks", href: "/groceries" },
+  { label: "Digital Products", href: "/digital-products" },
 ];
 
 export function Footer() {

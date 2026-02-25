@@ -14,6 +14,9 @@ import {
     Link2, Bookmark, Pin, Camera, Youtube, Gift, Target, ArrowRight,
     Smartphone, CircleDollarSign, CookingPot, AlertTriangle, Copy, Check, type LucideIcon
 } from "lucide-react";
+import { Breadcrumbs } from "@/components/breadcrumbs";
+import { SidebarAd } from "@/components/sidebar-ad";
+import { AffiliateSection } from "@/components/affiliate-section";
 import "./recipe-detail.css";
 
 const statIconMap: Record<string, LucideIcon> = {
@@ -111,6 +114,15 @@ export default function RecipeDetailPage() {
                 <Link href="/" className="nav-brand">FlavorsOnBudget</Link>
             </nav>
 
+            <div className="container mx-auto max-w-6xl px-4 md:px-6 pt-8 pb-4">
+                <Breadcrumbs
+                    items={[
+                        { label: "Recipes", href: "/recipes" },
+                        { label: recipe.title }
+                    ]}
+                />
+            </div>
+
             {/* Hero */}
             <div className="hero">
                 <span className="hero-category">{recipe.category} · {recipe.subcategory}</span>
@@ -169,11 +181,7 @@ export default function RecipeDetailPage() {
                         </ul>
                     </div>
 
-                    <div className="ad-placeholder">
-                        <span className="ad-icon"><Megaphone size={24} /></span>
-                        <span className="ad-label">Advertisement</span>
-                        <span className="ad-size">300 × 250</span>
-                    </div>
+                    <SidebarAd size="square" label="Spice Guide" />
 
                     <div className="sidebar-widget">
                         <h4><TrendingUp size={16} /> Trending Now</h4>
@@ -462,11 +470,7 @@ export default function RecipeDetailPage() {
                         </div>
                     </div>
 
-                    <div className="ad-placeholder">
-                        <span className="ad-icon"><Megaphone size={24} /></span>
-                        <span className="ad-label">Advertisement</span>
-                        <span className="ad-size">300 × 250</span>
-                    </div>
+                    <SidebarAd size="square" label="Budget Tips" />
 
                     <div className="sidebar-widget">
                         <h4><CookingPot size={16} /> More Recipes</h4>
@@ -501,11 +505,25 @@ export default function RecipeDetailPage() {
                         </ul>
                     </div>
 
-                    <div className="ad-placeholder tall">
-                        <span className="ad-icon"><Megaphone size={24} /></span>
-                        <span className="ad-label">Advertisement</span>
-                        <span className="ad-size">160 × 600</span>
-                    </div>
+                    <AffiliateSection
+                        title="Essential Cookware"
+                        products={[
+                            {
+                                name: "Hard Anodized Kadhai",
+                                description: "Even heating for perfect Indian curries.",
+                                price: "₹1,249",
+                                link: "#"
+                            },
+                            {
+                                name: "Budget Knife Set",
+                                description: "Sharp, durable, and affordable.",
+                                price: "₹699",
+                                link: "#"
+                            }
+                        ]}
+                    />
+
+                    <SidebarAd size="tall" label="Grocery Deals" />
 
                     <div className="sidebar-widget">
                         <h4><Smartphone size={16} /> Follow Us</h4>

@@ -8,9 +8,10 @@ import { Menu, X, Sparkles } from "lucide-react";
 
 const navLinks = [
   { label: "Recipes", href: "/recipes" },
-  { label: "Kitchen Essentials", href: "/#essentials" },
-  { label: "Groceries", href: "/#groceries" },
-  { label: "Digital Products", href: "/#digital" },
+  { label: "Guides", href: "/guides" },
+  { label: "Kitchen Essentials", href: "/essentials" },
+  { label: "Groceries", href: "/groceries" },
+  { label: "Digital Products", href: "/digital-products" },
 ];
 
 export function Navbar() {
@@ -28,8 +29,8 @@ export function Navbar() {
   return (
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-300 ${scrolled
-          ? "bg-background/95 backdrop-blur-md shadow-sm border-b border-border/50"
-          : "bg-transparent"
+        ? "bg-background/95 backdrop-blur-md shadow-sm border-b border-border/50"
+        : "bg-transparent"
         }`}
     >
       <div className="container px-4 md:px-6">

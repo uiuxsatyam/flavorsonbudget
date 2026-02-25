@@ -10,6 +10,7 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Search, Clock, ChefHat, ArrowRight, IndianRupee } from "lucide-react";
 import { getAllRecipes, getRecipeCategories } from "@/lib/recipes-data";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 
 const recipes = getAllRecipes();
 const categories = getRecipeCategories();
@@ -26,46 +27,51 @@ export default function RecipesPage() {
     });
 
     return (
-        <main className="min-h-screen flex flex-col bg-background">
+        <main className="min-h-screen flex flex-col bg-background text-foreground">
             <Navbar />
 
             {/* Header Section */}
             <section className="pt-24 md:pt-32 pb-12 px-4 md:px-6 bg-gradient-to-b from-secondary/30 to-background">
-                <div className="container mx-auto max-w-6xl text-center">
-                    <Badge variant="outline" className="mb-4 text-primary border-primary/30">
-                        Budget-Friendly Recipes
-                    </Badge>
-                    <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6">
-                        Delicious Recipes
-                    </h1>
-                    <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-10">
-                        Restaurant-quality meals at a fraction of the cost. Every recipe shows
-                        exactly how much you save compared to eating out.
-                    </p>
+                <div className="container mx-auto max-w-6xl">
+                    <div className="mb-6">
+                        <Breadcrumbs items={[{ label: "Recipes" }]} />
+                    </div>
+                    <div className="text-center">
+                        <Badge variant="outline" className="mb-4 text-primary border-primary/30">
+                            Budget-Friendly Recipes
+                        </Badge>
+                        <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6">
+                            Delicious Recipes
+                        </h1>
+                        <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-10">
+                            Restaurant-quality meals at a fraction of the cost. Every recipe shows
+                            exactly how much you save compared to eating out.
+                        </p>
 
-                    {/* Search and Filter */}
-                    <div className="flex flex-col md:flex-row gap-4 max-w-3xl mx-auto bg-card p-4 rounded-xl shadow-sm border border-border/50">
-                        <div className="relative flex-1">
-                            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                            <Input
-                                placeholder="Search recipes..."
-                                className="pl-9 bg-background"
-                                value={searchQuery}
-                                onChange={(e) => setSearchQuery(e.target.value)}
-                            />
-                        </div>
-                        <div className="flex gap-2 overflow-x-auto pb-2 md:pb-0 hide-scrollbar">
-                            {categories.map(category => (
-                                <Button
-                                    key={category}
-                                    variant={selectedCategory === category ? "default" : "outline"}
-                                    size="sm"
-                                    onClick={() => setSelectedCategory(category)}
-                                    className="whitespace-nowrap"
-                                >
-                                    {category}
-                                </Button>
-                            ))}
+                        {/* Search and Filter */}
+                        <div className="flex flex-col md:flex-row gap-4 max-w-3xl mx-auto bg-card p-4 rounded-xl shadow-sm border border-border/50">
+                            <div className="relative flex-1">
+                                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                                <Input
+                                    placeholder="Search recipes..."
+                                    className="pl-9 bg-background"
+                                    value={searchQuery}
+                                    onChange={(e) => setSearchQuery(e.target.value)}
+                                />
+                            </div>
+                            <div className="flex gap-2 overflow-x-auto pb-2 md:pb-0 hide-scrollbar">
+                                {categories.map(category => (
+                                    <Button
+                                        key={category}
+                                        variant={selectedCategory === category ? "default" : "outline"}
+                                        size="sm"
+                                        onClick={() => setSelectedCategory(category)}
+                                        className="whitespace-nowrap"
+                                    >
+                                        {category}
+                                    </Button>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
