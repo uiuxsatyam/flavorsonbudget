@@ -20,8 +20,8 @@ export function Newsletter() {
                     </p>
                 </div>
 
-                <div className="flex justify-center">
-                    <div className="w-full max-w-[562px] bg-card/50 backdrop-blur-sm p-2 rounded-[31px] border border-border/50 shadow-xl overflow-hidden group hover:border-primary/30 transition-all duration-500">
+                <div className="flex justify-center -mx-4 md:mx-0">
+                    <div className="w-full max-w-[562px] bg-card/30 backdrop-blur-sm rounded-[31px] border border-border/50 shadow-xl overflow-hidden group hover:border-primary/30 transition-all duration-500">
                         <Script
                             src="https://subscribe-forms.beehiiv.com/embed.js"
                             strategy="afterInteractive"
@@ -29,16 +29,14 @@ export function Newsletter() {
                         />
                         <iframe
                             src="https://subscribe-forms.beehiiv.com/30ff6409-53df-40ef-9139-14f4e951967c"
-                            className="beehiiv-embed w-full transition-transform duration-500 group-hover:scale-[1.01]"
+                            className="beehiiv-embed w-full appearance-none m-0 p-0"
                             data-test-id="beehiiv-embed"
                             frameBorder="0"
                             scrolling="no"
                             style={{
-                                height: '317px',
-                                margin: 0,
+                                height: '320px',
                                 borderRadius: '23px',
                                 backgroundColor: 'transparent',
-                                boxShadow: '0 0 #0000',
                             }}
                         />
                     </div>
