@@ -11,13 +11,16 @@ export function NewsletterPopup() {
     const [hasBeenDismissed, setHasBeenDismissed] = useState(false);
 
     useEffect(() => {
+        console.log("NewsletterPopup: Timer started for 10s");
         const dismissed = sessionStorage.getItem("newsletter-popup-dismissed");
         if (dismissed) {
-            setHasBeenDismissed(true);
-            return;
+            console.log("NewsletterPopup: Dismissed in this session. (Temporary bypass enabled for testing)");
+            // setHasBeenDismissed(true); // Commented out for debugging
+            // return;
         }
 
         const timer = setTimeout(() => {
+            console.log("NewsletterPopup: Showing now!");
             setIsVisible(true);
         }, 10000);
 
