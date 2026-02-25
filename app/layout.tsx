@@ -58,6 +58,11 @@ export default function RootLayout({
             })(window, document, "clarity", "script", "vmvc5xi28h");
           `}
         </Script>
+        <Script
+          src="https://subscribe-forms.beehiiv.com/attribution.js"
+          strategy="afterInteractive"
+          async
+        />
       </body>
     </html>
   )

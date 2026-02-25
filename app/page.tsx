@@ -6,6 +6,7 @@ import { GrocerySection } from "@/components/grocery-section";
 import { DigitalProductSection } from "@/components/digital-product-section";
 import { DisclosureSection } from "@/components/disclosure-section";
 import { SocialSection } from "@/components/social-section";
+import { Newsletter } from "@/components/newsletter";
 import { Footer } from "@/components/footer";
 
 export default function Home() {
@@ -29,6 +30,7 @@ export default function Home() {
         <DisclosureSection />
       </section>
       <SocialSection />
+      <Newsletter />
       <Footer />
     </main>
   );
