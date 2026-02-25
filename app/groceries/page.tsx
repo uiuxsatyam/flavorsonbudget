@@ -51,7 +51,7 @@ export default function GroceriesPage() {
         <main className="min-h-screen bg-background">
             <Navbar />
 
-            <div className="pt-24 pb-12 text-foreground">
+            <div className="pt-20 md:pt-24 pb-12 text-foreground">
                 <div className="container mx-auto max-w-6xl px-4 md:px-6">
                     <div className="mb-6">
                         <Breadcrumbs items={[{ label: "Grocery Picks" }]} />

@@ -114,7 +114,7 @@ export default function RecipeDetailPage() {
                 <Link href="/" className="nav-brand">FlavorsOnBudget</Link>
             </nav>
 
-            <div className="container mx-auto max-w-6xl px-4 md:px-6 pt-8 pb-4">
+            <div className="container mx-auto max-w-6xl px-4 md:px-6 pt-4 md:pt-8 pb-4">
                 <Breadcrumbs
                     items={[
                         { label: "Recipes", href: "/recipes" },
