@@ -26,11 +26,11 @@ export default function Home() {
       <section id="digital">
         <DigitalProductSection />
       </section>
+      <SocialSection />
+      <Newsletter />
       <section id="disclosure">
         <DisclosureSection />
       </section>
-      <SocialSection />
-      <Newsletter />
       <Footer />
     </main>
   );
