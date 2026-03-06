@@ -5,6 +5,7 @@ import { andaBhurjiPav } from "./recipes/anda-bhurji-pav";
 import { masalaOmelette } from "./recipes/masala-omelette";
 import { chickenHakkaNoodles } from "./recipes/chicken-hakka-noodles";
 import { choleBhature } from "./recipes/chole-bhature";
+import { bruschetta } from "./recipes/bruschetta";
 
 export type { Recipe };
 
@@ -15,6 +16,7 @@ const allRecipes: Recipe[] = [
     masalaOmelette,
     chickenHakkaNoodles,
     choleBhature,
+    bruschetta,
 ];
 
 export function getAllRecipes(): Recipe[] {
