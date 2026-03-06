@@ -273,8 +273,8 @@ export const guides: Guide[] = [
                 type: "stats",
                 content: ["Substantial bites for serious hunger."],
                 list: [
-                    "Paneer Bhurji: Scrambled paneer with veggies. (₹80)",
-                    "Veg Hakka Noodles: Stir-fry perfection in 8 min. (₹70)",
+                    "Paneer Bhurji: Scrambled paneer with veggies. (₹120)",
+                    "Veg Hakka Noodles: Stir-fry perfection in 8 min. (₹75)",
                     "Chicken Fried Rice: Using leftover chicken/rice. (₹90)",
                     "Potato Chips Chaat: Quick, crunchy, and spicy. (₹60)",
                     "Spicy Egg Sandwich: The protein-packed powerhouse. (₹100)"
@@ -287,7 +287,7 @@ export const guides: Guide[] = [
         ],
         relatedRecipes: [
             { title: "Chicken Hakka Noodles", price: "Under ₹129", emoji: "🍜", slug: "chicken-hakka-noodles" },
-            { title: "Paneer Bhurji", price: "Under ₹99", emoji: "🧀", slug: "paneer-bhurji" }
+            { title: "Paneer Bhurji", price: "Under ₹120", emoji: "🧀", slug: "dhaba-style-paneer-bhurji" }
         ]
     },
     {
