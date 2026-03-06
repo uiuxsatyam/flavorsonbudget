@@ -9,7 +9,7 @@ export const masalaOmelette: Recipe = {
     date: "Feb 2026",
     views: "2.5k",
     emoji: "🥘",
-    image: "",
+    image: "/images/recipes/masala-omelette.png",
     savingsBadgeAmount: "₹71",
     savingsBadgeSub: "vs café",
     initialLikes: 142,

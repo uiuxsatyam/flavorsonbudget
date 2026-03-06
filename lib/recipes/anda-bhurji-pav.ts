@@ -9,7 +9,7 @@ export const andaBhurjiPav: Recipe = {
     date: "Feb 2026",
     views: "3.1k",
     emoji: "🥚",
-    image: "",
+    image: "/images/recipes/anda-bhurji-pav.png",
     savingsBadgeAmount: "₹91",
     savingsBadgeSub: "vs resto",
     initialLikes: 178,

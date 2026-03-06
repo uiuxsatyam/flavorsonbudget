@@ -9,7 +9,7 @@ export const choleBhature: Recipe = {
     date: "Feb 2026",
     views: "4.7k",
     emoji: "🫓",
-    image: "",
+    image: "/images/recipes/chole-bhature.png",
     savingsBadgeAmount: "₹151",
     savingsBadgeSub: "vs resto",
     initialLikes: 312,

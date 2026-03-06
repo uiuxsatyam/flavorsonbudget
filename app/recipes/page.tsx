@@ -18,13 +18,34 @@ const categories = getRecipeCategories();
 export default function RecipesPage() {
     const [searchQuery, setSearchQuery] = useState("");
     const [selectedCategory, setSelectedCategory] = useState("All");
+    const [sortBy, setSortBy] = useState("recent"); // recent, price-low, price-high, views
 
-    const filteredRecipes = recipes.filter((recipe) => {
-        const matchesSearch = recipe.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            recipe.subcategory.toLowerCase().includes(searchQuery.toLowerCase());
-        const matchesCategory = selectedCategory === "All" || recipe.category === selectedCategory;
-        return matchesSearch && matchesCategory;
-    });
+    const filteredRecipes = recipes
+        .filter((recipe) => {
+            const matchesSearch = recipe.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                recipe.subcategory.toLowerCase().includes(searchQuery.toLowerCase());
+            const matchesCategory = selectedCategory === "All" || recipe.category === selectedCategory;
+            return matchesSearch && matchesCategory;
+        })
+        .sort((a, b) => {
+            if (sortBy === "price-low") {
+                const costA = parseInt(a.stats.find(s => s.label === "Total Cost")?.value.replace("₹", "") || "0");
+                const costB = parseInt(b.stats.find(s => s.label === "Total Cost")?.value.replace("₹", "") || "0");
+                return costA - costB;
+            }
+            if (sortBy === "price-high") {
+                const costA = parseInt(a.stats.find(s => s.label === "Total Cost")?.value.replace("₹", "") || "0");
+                const costB = parseInt(b.stats.find(s => s.label === "Total Cost")?.value.replace("₹", "") || "0");
+                return costB - costA;
+            }
+            if (sortBy === "views") {
+                const viewsA = parseFloat(a.views.replace("k", "")) * 1000;
+                const viewsB = parseFloat(b.views.replace("k", "")) * 1000;
+                return viewsB - viewsA;
+            }
+            // Default "recent" - assuming higher slug or just order in array for now if no specific date object
+            return 0;
+        });
 
     return (
         <main className="min-h-screen flex flex-col bg-background text-foreground">
@@ -49,17 +70,32 @@ export default function RecipesPage() {
                         </p>
 
                         {/* Search and Filter */}
-                        <div className="flex flex-col md:flex-row gap-4 max-w-3xl mx-auto bg-card p-4 rounded-xl shadow-sm border border-border/50">
-                            <div className="relative flex-1">
-                                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                                <Input
-                                    placeholder="Search recipes..."
-                                    className="pl-9 bg-background"
-                                    value={searchQuery}
-                                    onChange={(e) => setSearchQuery(e.target.value)}
-                                />
+                        <div className="flex flex-col gap-4 max-w-4xl mx-auto bg-card p-4 rounded-xl shadow-sm border border-border/50">
+                            <div className="flex flex-col md:flex-row gap-4 w-full">
+                                <div className="relative flex-1">
+                                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                                    <Input
+                                        placeholder="Search recipes..."
+                                        className="pl-9 bg-background"
+                                        value={searchQuery}
+                                        onChange={(e) => setSearchQuery(e.target.value)}
+                                    />
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <span className="text-xs font-medium text-muted-foreground whitespace-nowrap hidden md:inline">Sort by:</span>
+                                    <select
+                                        className="flex h-9 w-full md:w-[180px] rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+                                        value={sortBy}
+                                        onChange={(e) => setSortBy(e.target.value)}
+                                    >
+                                        <option value="recent">Most Recent</option>
+                                        <option value="views">Most Popular</option>
+                                        <option value="price-low">Price: Low to High</option>
+                                        <option value="price-high">Price: High to Low</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div className="flex gap-2 overflow-x-auto pb-2 md:pb-0 hide-scrollbar">
+                            <div className="flex gap-2 overflow-x-auto pb-2 md:pb-0 hide-scrollbar border-t border-border/50 pt-3">
                                 {categories.map(category => (
                                     <Button
                                         key={category}

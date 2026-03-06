@@ -9,7 +9,7 @@ export const chickenBiryani: Recipe = {
     date: "Feb 2026",
     views: "6.8k",
     emoji: "🍚",
-    image: "",
+    image: "/images/recipes/chicken-biryani.png",
     savingsBadgeAmount: "₹201",
     savingsBadgeSub: "vs resto",
     initialLikes: 389,

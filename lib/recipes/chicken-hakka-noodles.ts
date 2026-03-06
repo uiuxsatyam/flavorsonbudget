@@ -9,7 +9,7 @@ export const chickenHakkaNoodles: Recipe = {
     date: "Feb 2026",
     views: "5.4k",
     emoji: "🍜",
-    image: "",
+    image: "/images/recipes/chicken-hakka-noodles.png",
     savingsBadgeAmount: "₹171",
     savingsBadgeSub: "vs resto",
     initialLikes: 267,
