@@ -5,6 +5,12 @@ import { andaBhurjiPav } from "./recipes/anda-bhurji-pav";
 import { masalaOmelette } from "./recipes/masala-omelette";
 import { chickenHakkaNoodles } from "./recipes/chicken-hakka-noodles";
 import { choleBhature } from "./recipes/chole-bhature";
+import { cabbageParatha } from "./recipes/cabbage-paratha";
+import { cabbagePakoras } from "./recipes/cabbage-pakoras";
+import { cabbageFriedRice } from "./recipes/cabbage-fried-rice";
+import { masalaCorn } from "./recipes/masala-corn";
+import { vegetablePoha } from "./recipes/vegetable-poha";
+import { crunchyFrenchFries } from "./recipes/crunchy-french-fries";
 import { bruschetta } from "./recipes/bruschetta";
 
 export type { Recipe };
@@ -17,6 +23,12 @@ const allRecipes: Recipe[] = [
     chickenHakkaNoodles,
     choleBhature,
     bruschetta,
+    cabbageParatha,
+    cabbagePakoras,
+    cabbageFriedRice,
+    masalaCorn,
+    vegetablePoha,
+    crunchyFrenchFries,
 ];
 
 export function getAllRecipes(): Recipe[] {
