@@ -5,6 +5,7 @@ import { Analytics } from '@vercel/analytics/next'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import Script from 'next/script'
 import { NewsletterPopup } from '@/components/newsletter-popup'
+import ScrollToTop from '@/components/scroll-to-top'
 import './globals.css'
 
 const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-dm-sans" });
@@ -39,6 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${dmSans.variable} ${playfair.variable} font-sans antialiased`}>
+        <ScrollToTop />
         {children}
         <Analytics />
         <NewsletterPopup />

@@ -65,7 +65,7 @@ export default function ContactPage() {
                                 </div>
                                 <h3 className="font-serif font-bold text-xl mb-2">Location</h3>
                                 <p className="text-muted-foreground text-sm mb-4">Based in the heart of India, serving budget lovers worldwide.</p>
-                                <span className="text-foreground font-medium">New Delhi, India</span>
+                                <span className="text-foreground font-medium">Hyderabad, India</span>
                             </CardContent>
                         </Card>
                     </div>
