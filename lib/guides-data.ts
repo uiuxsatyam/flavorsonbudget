@@ -335,6 +335,62 @@ export const guides: Guide[] = [
             { title: "Chocolate Lava Cake", price: "Under ₹80", emoji: "🧁", slug: "chocolate-lava-cake" },
             { title: "Banana Pancakes", price: "Under ₹50", emoji: "🥞", slug: "banana-pancakes" }
         ]
+    },
+    {
+        slug: "4-fried-chicken-recipes-budget",
+        title: "4 Fried Chicken Recipes for Budget",
+        subtitle: "Max Crunch, Min Cost",
+        description: "Why pay for delivery when you can make elite fried chicken at home? We compare four legendary techniques to get maximum crunch on a budget.",
+        image: "/images/guides/fried-chicken-comparison.png",
+        category: "Comparison",
+        date: "Mar 2026",
+        views: "3,400",
+        author: "FlavorsOnBudget",
+        intro: {
+            lead: "The quest for the perfect crunch ends here. Stop overpaying for bone-dry fast food chicken!",
+            body: [
+                "Fried chicken is often seen as a 'treat' because of resto prices. But at home, chicken is one of the most cost-effective proteins. The real cost isn't the meat, it's the technique.",
+                "In this guide, we break down four distinct ways to fry chicken that will save you over ₹200 per meal while delivering 10x the flavor."
+            ],
+            keyTakeaways: [
+                "Brining is the secret to juicy meat, not the oil.",
+                "Cornstarch is cheaper and crunchier than flour alone.",
+                "Double-frying works for chicken just as well as fries.",
+                "Spices in the flour are where the magic happens."
+            ]
+        },
+        sections: [
+            {
+                title: "The 4 Techniques",
+                type: "comparison",
+                content: ["Four ways to fry, four ways to fly."],
+                list: [
+                    "1. The KFC Clone: Double-breaded, heavy on spices (₹110/portion)",
+                    "2. The Southern Buttermilk: Tangy, thick crust, extremely juicy (₹130/portion)",
+                    "3. The Indian Street Fry: Chickpea flour base, extra spicy (₹90/portion)",
+                    "4. The Korean 'Yangnyeom': Sweet & spicy glaze, double-fried for snap (₹140/portion)"
+                ]
+            },
+            {
+                title: "Budget Breakdown",
+                type: "stats",
+                content: ["The numbers behind the crunch."],
+                list: [
+                    "Home-made Fried Chicken: ₹90-₹140 per serving",
+                    "Major Fast Food Chain: ₹350+ per serving",
+                    "Saving: ~₹240 per meal!",
+                    "Annual Saving (2x/month): ₹5,760!"
+                ]
+            }
+        ],
+        faqs: [
+            { q: "Do I need a deep fryer?", a: "No! A heavy-bottomed kadai or cast-iron pan works perfectly and uses less oil." },
+            { q: "Is it healthy?", a: "Frying is indulgent, but home-made means zero preservatives and better oil quality." }
+        ],
+        relatedRecipes: [
+            { title: "Chicken Biryani", price: "Under ₹199", emoji: "🍛", slug: "chicken-biryani" },
+            { title: "Crunchy French Fries", price: "Under ₹40", emoji: "🍟", slug: "crunchy-french-fries" }
+        ]
     }
 ];
 
