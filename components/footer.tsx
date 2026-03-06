@@ -41,9 +41,15 @@ export function Footer() {
 
           {/* Quick Links */}
           <div className="flex flex-col space-y-4">
-            <h3 className="font-serif font-semibold text-background">Quick Links</h3>
+            <h3 className="font-serif font-semibold text-background">Explore</h3>
             <nav className="flex flex-col gap-3">
-              {links.slice(0, 3).map((link) => (
+              {[
+                { label: "Home", href: "/" },
+                { label: "About Us", href: "/about" },
+                { label: "Recipes", href: "/recipes" },
+                { label: "Pocket Guides", href: "/guides" },
+                { label: "Grocery Picks", href: "/groceries" },
+              ].map((link) => (
                 <Link
                   key={link.label}
                   href={link.href}
@@ -59,7 +65,11 @@ export function Footer() {
           <div className="flex flex-col space-y-4">
             <h3 className="font-serif font-semibold text-background">Resources</h3>
             <nav className="flex flex-col gap-3">
-              {links.slice(3).map((link) => (
+              {[
+                { label: "Kitchen Essentials", href: "/essentials" },
+                { label: "Digital Products", href: "/digital-products" },
+                { label: "Contact Us", href: "/contact" },
+              ].map((link) => (
                 <Link
                   key={link.label}
                   href={link.href}
@@ -72,8 +82,28 @@ export function Footer() {
                 href="mailto:flavorsonbudget@gmail.com"
                 className="text-sm text-background/70 hover:text-background hover:translate-x-1 transition-all duration-300"
               >
-                → Contact
+                → Email Inquiries
               </a>
+            </nav>
+          </div>
+
+          {/* Legal */}
+          <div className="flex flex-col space-y-4">
+            <h3 className="font-serif font-semibold text-background">Legal</h3>
+            <nav className="flex flex-col gap-3">
+              {[
+                { label: "Privacy Policy", href: "/privacy-policy" },
+                { label: "Terms of Use", href: "/terms-of-use" },
+                { label: "Affiliate Disclosure", href: "/affiliate-disclosure" },
+              ].map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="text-sm text-background/70 hover:text-background hover:translate-x-1 transition-all duration-300"
+                >
+                  → {link.label}
+                </Link>
+              ))}
             </nav>
           </div>
 
