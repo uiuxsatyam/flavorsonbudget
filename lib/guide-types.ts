@@ -4,7 +4,7 @@ export interface Guide {
     subtitle?: string;
     description: string;
     image: string;
-    category: "Challenge" | "Cooking 101" | "Comparison";
+    category: "Challenge" | "Cooking 101" | "Comparison" | "Quick Bites" | "Comfort Food" | "Sweet Treats";
     date: string;
     views: string;
     author: string;

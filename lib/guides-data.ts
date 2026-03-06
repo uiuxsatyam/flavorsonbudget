@@ -187,6 +187,154 @@ export const guides: Guide[] = [
             { title: "Masala Omelette", price: "Under ₹45", emoji: "🍳", slug: "masala-omelette" },
             { title: "Anda Bhurji Pav", price: "Under ₹70", emoji: "🥚", slug: "anda-bhurji-pav" }
         ]
+    },
+    {
+        slug: "late-night-cravings-01",
+        title: "Late Night Cravings 01",
+        subtitle: "Quick, Tasty & Under ₹100",
+        description: "The ultimate survival guide for midnight hunger. From Masala Maggi to Cheesy Toast, get your fix in under 5 minutes without breaking the bank.",
+        image: "/images/guides/late-night-cravings-01.png",
+        category: "Quick Bites",
+        date: "Mar 2026",
+        views: "3,450",
+        author: "FlavorsOnBudget",
+        intro: {
+            lead: "Midnight hunger strikes when you least expect it. Don't reach for the expensive delivery apps!",
+            body: [
+                "We've curated the most legendary late-night snacks that are fast, delicious, and incredibly cheap. Whether you're a student pulling an all-nighter or just need a savory hit before bed, these are for you.",
+                "Every item in this guide costs less than ₹100 and takes less than 5 minutes to prepare."
+            ],
+            keyTakeaways: [
+                "Maggi is the king, but veggies make it a meal.",
+                "Frozen corn and eggs are high-value freezer staples.",
+                "Breads and spreads are your fastest path to satisfaction.",
+                "Keep base spices (Chat Masala, Oregano) handy."
+            ]
+        },
+        sections: [
+            {
+                title: "The Savory Lineup",
+                type: "comparison",
+                content: ["Quick hits for immediate cravings."],
+                list: [
+                    "Masala Maggi: The classic, boosted with spices and onion. (₹60)",
+                    "Cheesy Toast: Melty goodness on a budget. (₹60)",
+                    "Egg Bhurji Roll: High protein, highly satisfying. (Ready in 3 min)",
+                    "Garlic Butter Corn: The 2-minute snack champion. (₹50)"
+                ]
+            },
+            {
+                title: "Prep Steps",
+                type: "checklist",
+                content: ["How to manage the 3 AM kitchen run."],
+                list: [
+                    "Keep water boiling while you chop.",
+                    "Use high heat for quick stir-frys.",
+                    "Clean as you go (or don't, it's late!).",
+                    "Always have butter in the fridge."
+                ]
+            }
+        ],
+        faqs: [
+            { q: "Is Maggi healthy at night?", a: "While it's processed, adding peas, carrots, or an egg makes it much more balanced." },
+            { q: "What's the best cheese for toast?", a: "Amul processed cheese slices or cubes are perfect for that classic street-style melt." }
+        ],
+        relatedRecipes: [
+            { title: "Masala Maggi", price: "Under ₹60", emoji: "🍜", slug: "masala-maggi" },
+            { title: "Anda Bhurji Pav", price: "Under ₹60", emoji: "🍳", slug: "anda-bhurji-pav" }
+        ]
+    },
+    {
+        slug: "late-night-cravings-02",
+        title: "Late Night Cravings 02",
+        subtitle: "Comfort Meals Under ₹100",
+        description: "Moving beyond snacks into real comfort. Paneer Bhurji, Veg Hakka Noodles, and even leftover Chicken Fried Rice — all for under ₹100.",
+        image: "/images/guides/late-night-cravings-02.png",
+        category: "Comfort Food",
+        date: "Mar 2026",
+        views: "2,890",
+        author: "FlavorsOnBudget",
+        intro: {
+            lead: "Sometimes a snack isn't enough. You need a proper, warm, comforting meal.",
+            body: [
+                "This secondary guide focuses on slightly more substantial meals that still fit the budget and the late-night timeline.",
+                "Transform simple ingredients like paneer, noodles, and leftover rice into gourmet-style comfort food in under 10 minutes."
+            ],
+            keyTakeaways: [
+                "Leftover rice is a goldmine for fried rice.",
+                "Paneer is the ultimate vegetarian protein for quick scrambles.",
+                "Noodles are versatile—change the sauce, change the meal.",
+                "Spices transform basic ingredients into restaurant-style hits."
+            ]
+        },
+        sections: [
+            {
+                title: "The Comfort Menu",
+                type: "stats",
+                content: ["Substantial bites for serious hunger."],
+                list: [
+                    "Paneer Bhurji: Scrambled paneer with veggies. (₹80)",
+                    "Veg Hakka Noodles: Stir-fry perfection in 8 min. (₹70)",
+                    "Chicken Fried Rice: Using leftover chicken/rice. (₹90)",
+                    "Potato Chips Chaat: Quick, crunchy, and spicy. (₹60)",
+                    "Spicy Egg Sandwich: The protein-packed powerhouse. (₹100)"
+                ]
+            }
+        ],
+        faqs: [
+            { q: "Can I use frozen veggies for noodles?", a: "Absolutely. Frozen peas and corn are perfect time-savers for late-night cooking." },
+            { q: "What if I don't have soy sauce?", a: "A mix of salt, pepper, and a dash of vinegar can mimic the tang in a pinch." }
+        ],
+        relatedRecipes: [
+            { title: "Chicken Hakka Noodles", price: "Under ₹129", emoji: "🍜", slug: "chicken-hakka-noodles" },
+            { title: "Paneer Bhurji", price: "Under ₹99", emoji: "🧀", slug: "paneer-bhurji" }
+        ]
+    },
+    {
+        slug: "late-night-cravings-03",
+        title: "Late Night Cravings 03",
+        subtitle: "Sweet Cravings & Treats",
+        description: "For that midnight sweet tooth! Chocolate mug cakes, Nutella parathas, and frozen fruit shakes — all under ₹100.",
+        image: "/images/guides/late-night-cravings-03.png",
+        category: "Sweet Treats",
+        date: "Mar 2026",
+        views: "4,120",
+        author: "FlavorsOnBudget",
+        intro: {
+            lead: "The sweet tooth doesn't sleep. Here's how to satisfy it on a budget.",
+            body: [
+                "Midnight desserts don't have to be complicated. With a microwave and a few pantry staples like cocoa, sugar, and Nutella, you're minutes away from bliss.",
+                "This guide is for the chocolate lovers and the fruit fans who need a quick fix before lights out."
+            ],
+            keyTakeaways: [
+                "A mug cake is a 1-minute miracle.",
+                "Nutella makes anything better, especially parathas.",
+                "Frozen fruits are perfect for instant healthy shakes.",
+                "Cinnamon and oats are great for a cozy, warm finish."
+            ]
+        },
+        sections: [
+            {
+                title: "The Sweet Selection",
+                type: "comparison",
+                content: ["Instant gratification for your sweet cravings."],
+                list: [
+                    "Chocolate Mug Cake: 1 minute in the microwave. (₹60)",
+                    "Honey Banana Toast: Simple, sweet, and healthy. (₹40)",
+                    "Nutella Paratha: Fold, cook, and enjoy. (₹50)",
+                    "Frozen Fruit Shake: Blend and go. (₹70)",
+                    "Cinnamon Oats: The warm, cozy classic. (₹50/₹70)"
+                ]
+            }
+        ],
+        faqs: [
+            { q: "Is mug cake gummy?", a: "If you overcook it, yes. Try 45-60 seconds and let it rest for another minute." },
+            { q: "Can I use honey instead of Nutella?", a: "Yes, honey and banana is a classic budget-friendly sweet combo." }
+        ],
+        relatedRecipes: [
+            { title: "Chocolate Lava Cake", price: "Under ₹80", emoji: "🧁", slug: "chocolate-lava-cake" },
+            { title: "Banana Pancakes", price: "Under ₹50", emoji: "🥞", slug: "banana-pancakes" }
+        ]
     }
 ];
 
