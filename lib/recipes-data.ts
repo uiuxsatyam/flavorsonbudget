@@ -2,6 +2,7 @@ import { Recipe } from "./recipe-types";
 import { creamyGarlicPasta } from "./recipes/creamy-garlic-pasta";
 import { pinkSaucePasta } from "./recipes/pink-sauce-pasta";
 import { threeCheeseVegSandwich } from "./recipes/three-cheese-veg-sandwich";
+import { periPeriFries } from "./recipes/peri-peri-fries";
 import { chickenBiryani } from "./recipes/chicken-biryani";
 import { andaBhurjiPav } from "./recipes/anda-bhurji-pav";
 import { masalaOmelette } from "./recipes/masala-omelette";
@@ -27,6 +28,7 @@ const allRecipes: Recipe[] = [
     creamyGarlicPasta,
     pinkSaucePasta,
     threeCheeseVegSandwich,
+    periPeriFries,
     chickenBiryani,
     andaBhurjiPav,
     masalaOmelette,
