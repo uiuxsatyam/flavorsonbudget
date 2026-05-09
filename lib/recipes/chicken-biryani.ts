@@ -17,7 +17,7 @@ export const chickenBiryani: Recipe = {
     stats: [
         { icon: "💰", value: "₹199", label: "Total Cost" },
         { icon: "🍽️", value: "₹50", label: "Per Serving" },
-        { icon: "⏱️", value: "50 min", label: "Total Time" },
+        { icon: "⏱️", value: "45 min", label: "Total Time" },
         { icon: "👥", value: "4", label: "Servings" },
         { icon: "🌶️", value: "Medium", label: "Spice Level" },
     ],
