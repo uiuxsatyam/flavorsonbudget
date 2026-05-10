@@ -21,6 +21,9 @@ import { dhabaPaneerBhurji } from "./recipes/dhaba-style-paneer-bhurji";
 import { mumbaiPavBhaji } from "./recipes/mumbai-pav-bhaji";
 import { eggFriedRice5Ingredient } from "./recipes/egg-fried-rice-5-ingredient";
 import { bruschetta } from "./recipes/bruschetta";
+import { strawberryMilkshake } from "./recipes/strawberry-milkshake";
+import { coldCoffee } from "./recipes/cold-coffee";
+import { chocolateBrownie } from "./recipes/chocolate-brownie";
 
 export type { Recipe };
 
@@ -47,6 +50,9 @@ const allRecipes: Recipe[] = [
     dhabaPaneerBhurji,
     mumbaiPavBhaji,
     eggFriedRice5Ingredient,
+    strawberryMilkshake,
+    coldCoffee,
+    chocolateBrownie,
 ];
 
 export function getAllRecipes(): Recipe[] {
