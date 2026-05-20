@@ -24,6 +24,12 @@ import { bruschetta } from "./recipes/bruschetta";
 import { strawberryMilkshake } from "./recipes/strawberry-milkshake";
 import { coldCoffee } from "./recipes/cold-coffee";
 import { chocolateBrownie } from "./recipes/chocolate-brownie";
+import { loadedVegPizzaToast } from "./recipes/loaded-veg-pizza-toast";
+import { chocoChipCookies } from "./recipes/choco-chip-cookies";
+import { mochaFrappe } from "./recipes/mocha-frappe";
+import { loadedPaneerNachos } from "./recipes/loaded-paneer-nachos";
+import { cheesyCornSandwich } from "./recipes/cheesy-corn-sandwich";
+import { loadedMasalaFries } from "./recipes/loaded-masala-fries";
 
 export type { Recipe };
 
@@ -53,6 +59,12 @@ const allRecipes: Recipe[] = [
     strawberryMilkshake,
     coldCoffee,
     chocolateBrownie,
+    loadedVegPizzaToast,
+    chocoChipCookies,
+    mochaFrappe,
+    loadedPaneerNachos,
+    cheesyCornSandwich,
+    loadedMasalaFries,
 ];
 
 export function getAllRecipes(): Recipe[] {
